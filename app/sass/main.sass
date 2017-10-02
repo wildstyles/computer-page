@@ -1,0 +1,554 @@
+@import "fonts"
+@import "vars"
+@import "smartgrid"
+
++reset()
+
+.container
+	+wrapper()
+
+*::-webkit-input-placeholder
+  color: #bbbbbb
+  opacity: 1
+
+*:-moz-placeholder
+  color: #bbbbbb
+  opacity: 1
+
+*::-moz-placeholder
+  color: #bbbbbb
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #bbbbbb
+  opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.5
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+a
+	text-decoration: none
+
+.button
+	display: inline-block
+	border: 1px $accent solid
+	color: $accent
+	text-decoration: none
+	background-color: transparent
+	padding: 8px 23px
+	font-family: $bold
+	letter-spacing: 1px
+	text-align: center
+	position: relative
+	outline: none
+	text-transform: uppercase
+	transition: background-color .3s ease, color .3s ease, border-color .3s ease
+	&-home
+		font-size: 18px
+		padding: 12px 45px
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: #FED136
+		border-color: #FED136
+		color: #fff
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+
+.icon 
+	fill: #fff
+	height: 13px
+	overflow: hidden
+	width: 13px
+
+.home, .photo, section
+	background-position: center
+	background-size: cover
+	position: relative
+
+.section-name
+	text-align: center
+	font-family: $bold
+	color: $black
+	font-size: 30px
+	padding-top: 90px
+	&-time
+		color: #fff
+		text-transform: uppercase
+		padding-top: 70px
+	&-contacts
+		color: #fff
+		position: relative
+	&-reviews
+		margin-bottom: 35px
+
+.home
+	height: 100vh
+	position: relative
+	&::before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #000
+		opacity: .6
+
+.header-wrapper
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	+sm-block
+		flex-direction: column
+	.logo-side, .phone-side
+		display: flex
+		color: #fff
+		align-items: center
+		margin-top: 30px
+		+sm-block
+			justify-content: space-around
+		+xs-block
+			.phone-side
+				display: none
+		.logo
+			margin-right: 60px
+			font-size: 26px
+			font-family: $bold
+			a
+				color: #fff
+				span
+					color: $accent
+		.phone
+			margin-right: 35px
+			svg
+				margin-right: 6px
+			a
+				color: #fff
+
+.header-wrapper .phone-side
+	+xs-block
+		display: none
+
+.home-composition
+	height: calc(100vh - 72px)
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	position: relative
+	color: #fff
+	text-align: center
+	.description
+		font-size: 30px
+	.header
+		font-size: 48px
+		font-family: $bold
+		text-transform: uppercase
+		margin: 17px 0 28px
+
+.about-wrapper
+	+row-flex()
+	.description
+		+col()
+		+size(8)
+		+offset(2)
+		+size-xs(10)
+		+offset-xs(1)
+		text-align: center
+		line-height: 26px
+		margin-top: 20px
+		color: $text
+	.photo
+		+col()
+		+size(6)
+		+offset(3)
+		+size-xs(10)
+		+offset-xs(1)
+		height: 325px
+		margin: 50px auto 100px
+
+
+.services
+	position: relative
+	background-color: #E4E4E5
+	padding-bottom: 95px
+
+.services-wrapper
+	+row-flex()
+	margin-top: 55px
+	display: flex
+	.item
+		+col()
+		+size(4)
+		+size-sm(6)
+		+size-xs(10)
+		+offset-xs(1)
+		+md-block
+			margin-bottom: 50px
+			&:last-child
+				margin-bottom: 0
+		text-align: center
+		.photo
+			height: 258px
+		.header
+			margin: 20px 0 5px
+			font-family: $bold
+			font-size: 20px
+			+md-block
+				padding: 0 20px
+			a
+				color: $black
+			&:hover a
+				color: #000
+				transition: color .3s ease
+		.description
+			color: $text
+			+md-block
+				padding: 0 20px
+
+
+.process
+	margin-bottom: 100px
+
+.process-wrapper
+	+row-flex()
+	margin-top: 55px
+	display: flex
+	justify-content: space-around
+	.item
+		+col()
+		+size(3)
+		+size-sm(5)
+		+size-xs(10)
+		+offset-xs(1)
+		+sm-block
+			margin: 30px 0 0px 
+		text-align: center
+		.header
+			font-family: $bold
+			font-size: 18px
+			color: $black
+			margin: 25px 0 8px
+			+md-block
+				padding: 0 20px
+		.description
+			line-height: 22px
+			color: $text
+			+md-block
+				padding: 0 20px
+		&-icon
+			height: 88px
+			width: 88px
+			border: 1px $accent solid
+			border-radius: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: auto
+			svg
+				height: 48px
+				width: 48px
+				fill: $accent
+
+.time
+	padding-bottom: 75px
+	&::before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #0F1B29
+		opacity: .6
+.time-wrapper
+	position: relative
+	text-align: center
+	color: #fff
+	.description
+		margin: 25px 0 55px
+		font-size: 24px
+		text-transform: uppercase
+		+xs-block
+			padding: 0 30px
+
+.reviews
+	padding-bottom: 100px
+
+.owl-reviews
+	.item
+		+col()
+		+size(8)
+		+offset(2)
+		text-align: center
+		.description
+			line-height: 26px
+			color: $text
+			margin: 0px 0 25px
+		.name
+			color: $text
+			font-size: $regular
+			svg
+				fill: $text
+				margin-right: 10px
+				position: relative
+				top: 2px
+	.owl-nav
+		width: 100%
+		display: flex
+		position: absolute
+		top: 10px
+		justify-content: space-between
+		+xs-block
+			top: 80px
+		> div
+			border: 1px $accent solid
+			height: 60px
+			width: 60px
+			display: flex
+			justify-content: center
+			align-items: center
+			&.owl-next
+			&.owl-prev
+			&:hover
+				background-color: $accent
+				transition: background-color .3s ease
+				svg
+					fill: #fff
+					transition: fill .3s ease
+
+.icon-left, .icon-right
+	fill: $accent
+	height: 20px
+	width: 20px
+
+.contacts
+	position: relative
+	text-align: center
+	padding-bottom: 100px
+	+md-block
+		padding-bottom: 50px
+	.button
+		margin-top: 10px
+		+md-block
+			margin-top: 30px
+	&::before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: #000
+			opacity: .6
+
+.contacts-wrapper
+	position: relative
+	text-align: center
+	+row-flex()
+	.description
+		+col()
+		+size(6)
+		+offset(3)
+		+size-sm(8)
+		+offset-sm(2)
+		color: #fff
+		line-height: 26px
+		margin-bottom: 55px
+		margin-top: 15px
+	.data
+		+col()
+		+size(5)
+		+offset-left(1)
+		+size-sm(10)
+		.input
+			display: block
+			width: 94%
+			margin-bottom: 25px
+			padding: 15px 0
+			padding-left: 15px
+			font-size: 14px
+			border-radius: 2px
+			text-transform: uppercase
+			+sm-block
+				width: 100%
+	.message
+		+col()
+		+size(5)
+		+size-sm(10)
+		+offset-sm(1)
+		form textarea
+			width: 100%
+			height: 172px
+			resize: none
+			border-radius: 2px
+			padding: 15px 0
+			padding-left: 15px
+			font-size: 14px
+			text-transform: uppercase
+
+.footer
+	position: relative
+	background-color: #1F1F26
+	padding-top: 35px
+	padding-bottom: 30px
+
+.footer-wrapper
+	+row-flex()
+	.desription
+		+col()
+		+size(4)
+		+size-sm(4)
+		+offset-sm(1)
+		+size-xs(10)
+		+offset-xs(1)
+		color: #fff
+		.logo
+			font-size: 26px
+			font-family: $bold
+			a
+				color: #fff
+				span
+					color: $accent
+		.descr
+			font-size: 14px
+			line-height: 22px
+			margin-top: 10px
+			margin-bottom: 30px
+		.copyright
+			color: #b1b1b1
+			font-size: 14px
+	.footer-contacts
+		+col()
+		+size(4)
+		+offset-left(1)
+		+size-md(3)
+		+offset-left-md(1)
+		+size-sm(3)
+		+size-xs(10)
+		+offset-xs(1)
+		+xs-block
+			margin-top: 50px
+		.header
+			color: #fff
+			text-transform: uppercase
+			font-family: $regular
+			margin-bottom: 25px
+		.contacts-list ul
+			li
+				font-size: 14px
+				margin-bottom: 10px
+				color: #fff
+				a
+					color: #fff
+				svg
+					margin-right: 10px
+	.social
+		+col()
+		+size(3)
+		+size-md(3)
+		+size-sm(12)
+		+size-xs(10)
+		+offset-xs(1)
+		+sm-block
+			margin-top: 50px
+			margin-bottom: 30px
+		text-align: center
+		.header
+			color: #fff
+			text-transform: uppercase
+			font-family: $regular
+			margin-bottom: 25px
+		ul li
+			display: inline-block
+			height: 38px
+			width: 38px
+			border-radius: 50%
+			border: 2px $accent solid
+			display: inline-flex
+			justify-content: center
+			align-items: center
+			margin: 0 4px
+			svg
+				height: 20px
+				width: 20px
+				position: relative
+				top: 3px
+				fill: $accent
+			&:hover
+				svg
+					fill: #fff
+					transition: all .3s ease
+				&:nth-child(1)
+					background-color: #00ACED
+					border-color: #00ACED
+					transition: all .3s ease
+				&:nth-child(2)
+					background-color: #3B5998
+					border-color: #3B5998
+					transition: all .3s ease
+				&:nth-child(3)
+					background-color: #CB2028
+					border-color: #CB2028
+					transition: all .3s ease
+				&:nth-child(4)
+					background-color: #DA2713
+					border-color: #DA2713
+					transition: all .3s ease
+
+
+.top
+	position: fixed
+	bottom: 20px
+	background-color: transparent
+	border: 1px #322E28 solid
+	color: #fff
+	font-size: 26px
+	width: 56px
+	height: 56px
+	line-height: 56px
+	text-align: center
+	cursor: pointer
+	transition: all .25s ease
+	right: -100px
+	z-index: 14
+	opacity: 1
+	svg
+		height: 15px
+		width: 15px
+		position: relative
+		fill: $black
+	&.active
+		right: 20px
+	&:hover
+		background-color: $accent
+
+@import "media"
